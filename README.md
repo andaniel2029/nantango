@@ -27,7 +27,7 @@ $ npm run start
 $ npm run build
 ```
 
-Then the app is published in `build` folder.
+Then the app will be published in `docs` folder.
 
 ## License
 
