@@ -23,7 +23,7 @@ const ResultPageWrapper = styled.div`
 `;
 
 const filterWrongAnswers = (answers: IQuestionAnswer[]) => {
-  return answers.filter(answer => answer.questionPoints === 0);
+  return answers.filter(answer => answer.questionPoints <= 0);
 };
 
 export default () => {

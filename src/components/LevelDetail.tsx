@@ -1,10 +1,10 @@
 import _ from "lodash";
 import React, { useCallback, useMemo } from "react";
 import ProgressBar from "react-flexible-progressbar";
-import "./progressBar.css";
 import { useHistory, useParams } from "react-router";
 import styled from "styled-components";
 import { IQuestion, useQuestions, useSetUsedChoices } from "./DataProvider";
+import "./progressBar.css";
 // import PieTimer from "./PieTimer";
 const QUESTION_NUMBER_PER_LEVEL = Number(
   process.env.REACT_APP_QUESTION_NUMBER as string,
@@ -109,7 +109,7 @@ export default () => {
     return questions[currentIndex];
   }, [questions, currentIndex]);
   const onChoosen = useCallback((currentQuestion: IQuestion, answer: string, userTime: number) => {
-    const isCorrect = currentQuestion.meanings[1] !== answer;
+    const isCorrect = currentQuestion.meanings[1] === answer;
     const questionPoints = isCorrect ? 5 - userTime : 0;
     // the 4th position in record !== user answer
     setAnswers(ans => [
